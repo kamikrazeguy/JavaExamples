@@ -15,7 +15,8 @@ public class MergeSort {
 
         int n = intArray.length;
         int halfSize = n/2;
-        int[] leftArray, rightArray;
+        int[] leftArray;
+        int[] rightArray;
         boolean oddArray = false;
 
         //CHECK IF LENGTH IS EVEN OR NOT, IF NOT ASSIGN LEFT ONE LESS WHILE RIGHT ONE MORE INDEX
@@ -39,9 +40,8 @@ public class MergeSort {
         if(oddArray) {
             rightArray[halfSize] = intArray[n-1];
         }
-
-        System.out.println("Left: " + Arrays.toString(leftArray));
-        System.out.println("Right: " + Arrays.toString(rightArray));
+//        System.out.println("Left: " + Arrays.toString(leftArray));
+//        System.out.println("Right: " + Arrays.toString(rightArray));
 
         split(leftArray);
         split(rightArray);
@@ -53,7 +53,9 @@ public class MergeSort {
     private static void mergeSort(int[] array, int[] leftArray, int[] rightArray){
 
         //Indices
-        int i = 0, j = 0, arrayIndex = 0;
+        int i = 0;
+        int j = 0;
+        int arrayIndex = 0;
 
         while(i < leftArray.length && j < rightArray.length){
             if(leftArray[i] < rightArray[j]){
@@ -80,6 +82,6 @@ public class MergeSort {
             arrayIndex++;
         }
 
-        System.out.println("sorted: "+Arrays.toString(array));
+//        System.out.println("sorted: "+Arrays.toString(array));
     }
 }
